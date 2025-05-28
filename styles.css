@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;         /* Шрифт */
+  background: #fafafa;             /* Цвет фона */
+  text-align: center;              /* Центровка контента */
+  padding: 2em;                    /* Отступ вокруг */
+}
+.card {
+  background: white;              /* Фон визитки */
+  padding: 2em;                   /* Внутренние отступы */
+  border-radius: 12px;            /* Скругление углов */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Тень */
+  max-width: 400px;
+  margin: 0 auto;                 /* Центровка по ширине */
+}
+.photo {
+  width: 150px;                   /* Размер фото */
+  border-radius: 50%;             /* Круглая форма */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.contacts a {
+  color: #1565c0;                 /* Цвет ссылок */
+  text-decoration: none;
+}
+.contacts a:hover {
+  text-decoration: underline;     /* Подчёркивание при наведении */
+}
+.qr-container {
+    margin-top: 20px;
+    padding: 10px;
+  }
+  
+  .qr {
+    max-width: 150px;
+    display: none;
+    margin: 0 auto;
+  }

@@ -1,0 +1,58 @@
+<!DOCTYPE html> <!-- Объявляем тип документа -->
+<html lang="ru"> <!-- Указываем язык страницы -->
+<head>
+  <meta charset="UTF-8"> <!-- Кодировка -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Адаптивность -->
+  <title>Моя визитка</title> <!-- Заголовок страницы -->
+  <link rel="manifest" href="manifest.json"> <!-- Подключаем манифест -->
+  <link rel="stylesheet" href="styles.css"> <!-- Подключаем стили -->
+</head>
+<body>
+  <div class="card"> <!-- Основной контейнер визитки -->
+    <img src="images/photo.jpeg" alt="Фото" class="photo"> <!-- Фото пользователя -->
+    <h1>Науменко Николь</h1> <!-- Имя -->
+    <p>Группа ПИ21-2в</p>
+    <div class="contacts">
+      <a href="+79999999999" class="contact-btn phone">+7(999)999-99-99</a> <br />
+      <a href="https://t.me/me" target="_blank" class="contact-btn telegram">Telegram</a><br />
+      <a href="https://vk.com/me" target="_blank" class="contact-btn vk">VK</a>
+    </div>
+    
+    <div class="qr-container">
+      <h3 class="qr-h3">QR-код:</h3>
+      <img src="images/qr-phone.png" alt="QR телефон" class="qr" id="qr-phone">
+      <img src="images/qr-telegram.png" alt="QR Telegram" class="qr" id="qr-telegram">
+      <img src="images/qr-vk.png" alt="QR VK" class="qr" id="qr-vk">
+    </div><!-- QR-код -->
+  </div>
+  <script src="app.js"></script> <!-- Скрипт подключения Service Worker -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactButtons = document.querySelectorAll('.contact-btn');
+      const qrCodes = document.querySelectorAll('.qr');
+      const qrH3 = document.querySelector('.qr-h3');
+      
+      qrCodes.forEach(qr => qr.style.display = 'none');
+      qrH3.style.display = 'none';
+      
+      contactButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          
+          e.preventDefault();
+          
+          qrCodes.forEach(qr => qr.style.display = 'none');
+          qrH3.style.display = 'block';
+          
+          if (this.classList.contains('telegram')) {
+            document.getElementById('qr-telegram').style.display = 'block';
+          } else if (this.classList.contains('vk')) {
+            document.getElementById('qr-vk').style.display = 'block';
+          } else if (this.classList.contains('phone')) {
+            document.getElementById('qr-phone').style.display = 'block';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
