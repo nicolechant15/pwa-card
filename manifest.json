@@ -1,0 +1,25 @@
+{
+  "name": "Визитка",                      
+  "short_name": "Визитка",               
+  "start_url": ".",                     
+  "display": "standalone",              
+  "background_color": "#ffffff",         
+  "theme_color": "#1976d2",              
+  "images": [
+    {
+      "src": "images/qr-telegram.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/qr-phone.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "images/qr-vk.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
