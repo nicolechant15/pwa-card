@@ -1,7 +1,7 @@
 {
   "name": "Визитка",                      
   "short_name": "Визитка",               
-  "start_url": ".",                     
+  "start_url": "/pwa-card/",                     
   "display": "standalone",              
   "background_color": "#ffffff",         
   "theme_color": "#1976d2",              
